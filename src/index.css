@@ -1,0 +1,19 @@
+/* logo font */
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+/* navbar font */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.description > a {
+  color: #2d2d2d7c;
+  color: #274cb3;
+  font-weight: bold;
+}
+.description > a:hover {
+  color: #1e3a8a;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
