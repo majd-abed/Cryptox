@@ -41,11 +41,12 @@ const Cryptocurrencies = () => {
           <Pagination
             hideFirstLastPages={true}
             innerClass='flex justify-center item'
-            itemClass='bg-white inline mx-4 px-[17px] py-2 rounded-full border border-blue-900 text-xl hover:bg-slate-50 hover:scale-[1.1] duration-300 font-semibold'
+            itemClass='bg-white inline mx-4 smx:mx-1 px-[17px] py-2
+            smx:px-[13px] smx:py-1 rounded-full border border-blue-900 text-xl smx:text-md hover:bg-slate-50 hover:scale-[1.1] duration-300 font-semibold'
             prevPageText={<BiLeftArrow className="text-blue-900"/>}
             nextPageText={<BiRightArrow className="text-blue-900"/>}
-            itemClassPrev='border-0 bg-transparent text-[1.7rem]'
-            itemClassNext='border-0 bg-transparent text-[1.7rem]'
+            itemClassPrev='border-0 bg-transparent text-[1.7rem] -pr-4'
+            itemClassNext='border-0 bg-transparent text-[1.7rem] -ml-4'
             activeClass='bg-slate-200 hover:bg-slate-300'
             activePage={page}
             itemsCountPerPage={50}
