@@ -100,7 +100,7 @@ const Chart = ({ cryptoId, currency, name }) => {
   </div> 
   return (
     <>
-      <div className=' lg:px-16 pb-3'>
+      <div className=' lg:px-16 pb-3 min-h-[75vh]'>
         <Line data={data} options={options} />
       </div>
       <div className='flex justify-center'>
