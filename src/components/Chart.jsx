@@ -76,6 +76,7 @@ const Chart = ({ cryptoId, currency, name }) => {
         radius: 1.5,
       },
     },
+    maintainAspectRatio: false,
   };
   const chartDays = [
     {
