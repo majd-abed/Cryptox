@@ -42,7 +42,7 @@ const Card = ({
           <img src={image} alt={name} className='w-12 h-12' />
         </div>
       </div>
-      <ul className='pl-2'>
+      <ul className='pl-4'>
         {numbers.map((item, index) => {
           return (
             <li key={index} className='pb-4 text-[16.5px]'>
