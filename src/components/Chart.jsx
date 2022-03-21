@@ -112,7 +112,7 @@ const Chart = ({ cryptoId, currency, name }) => {
               onClick={() => {
                 setDays(day.value);
               }}
-              className='border-2 border-blue-900 px-2 lg:mx-5 lgx:mx-1 w-26 bg-slate-50 rounded-md hover:bg-slate-200 duration-300 font-medium'>
+              className='border-2 border-blue-900 p-2 lg:mx-5 lgx:mx-1 w-26 bg-slate-50 rounded-md hover:bg-slate-200 duration-300 font-medium'>
               {day.label}
             </button>
           );
