@@ -53,7 +53,7 @@ const Exchanges = () => {
                 return (
                   <tr key={item.id}>
                     <td className='flex items-center border-b font-medium p-4 smx:px-1 md:pl-12 pb-3 text-gray-700 text-center smx:text-sm'>
-                      <img src={item.image} alt='' className='smx:pr-1' />
+                      <img src={item.image} alt='' className='sm:pr-1' />
                       <span>{item.name}</span>
                     </td>
                     <td className='border-b font-medium p-4 md:pl-8 pb-3 text-gray-700 text-center smx:text-sm'>
