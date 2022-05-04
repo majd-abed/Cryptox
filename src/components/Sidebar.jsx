@@ -9,7 +9,7 @@ const Sidebar = () => {
   return (
     <div
       className={clsx(
-        "duration-300 lg:hidden w-screen h-screen fixed top-16  bg-white z-50",
+        "duration-300 lg:hidden w-screen h-screen fixed top-[3.55rem] bg-white z-50",
         { "-translate-x-full": isSidebarOpen },
         { "translate-x-0": !isSidebarOpen }
       )}>
@@ -17,7 +17,7 @@ const Sidebar = () => {
         {linksData.map((link) => {
           const { id, name, url, icon } = link;
           return (
-            <li className='border-b last:border-b-0 first:border-t-2' key={id}>
+            <li className='border-b last:border-b-0 first:border-t' key={id}>
               <Link
                 to={url}
                 onClick={switchSidebar}

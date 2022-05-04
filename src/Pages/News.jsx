@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Container, Loading, Title } from "../components";
 import { FaArrowRight } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 import moment from "moment";
 
 const News = () => {
   const [newsData, setNewsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
   useEffect(() => {
     var axios = require("axios").default;
     var options = {
       method: "GET",
       url: "https://bing-news-search1.p.rapidapi.com/news/search",
-      params: { q: "cryptocurrency", freshness: "Day", textFormat: "Raw", safeSearch: "Off" },
+      params: {
+        q: "cryptocurrency",
+        freshness: "Day",
+        textFormat: "Raw",
+        safeSearch: "Off",
+      },
       headers: {
         "x-bingapis-sdk": "true",
         "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
@@ -28,9 +35,21 @@ const News = () => {
       })
       .catch(function (error) {
         console.error(error);
+        setIsLoading(false);
+        setIsError(true);
       });
   }, []);
   if (isLoading) return <Loading />;
+  if (isError)
+    return (
+      <Container>
+        <div className="flex flex-col justify-center items-center m-auto w-fit my-8 font-sans">
+          <FaTimes className='h-16 w-16 text-red-600'/>
+          <p className="text-2xl font-semibold">Access forbidden due to the US restrictions on your country</p>
+          <p className="self-end font-semibold text-sm text-gray-500 pt-3">Use a VPN service to access this section</p>
+        </div>
+      </Container>
+    );
   return (
     <main className='font-sans bg-slate-50'>
       <Container>
@@ -56,10 +75,15 @@ const News = () => {
                   <div className='m-2'>
                     <div className='flex items-center'>
                       <div className='overflow-hidden w-7 h-7'>
-                        <img src={item?.provider[0]?.image?.thumbnail?.contentUrl} alt='' />
+                        <img
+                          src={item?.provider[0]?.image?.thumbnail?.contentUrl}
+                          alt=''
+                        />
                       </div>
                       <div className='flex-1 flex items-center justify-between'>
-                        <h1 className='text-md font-bold pl-3 smx:text-sm smx:pl-1'>{item?.provider[0]?.name}</h1>
+                        <h1 className='text-md font-bold pl-3 smx:text-sm smx:pl-1'>
+                          {item?.provider[0]?.name}
+                        </h1>
                         <a
                           href={item?.url}
                           target='_blank'

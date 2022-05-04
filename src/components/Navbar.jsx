@@ -1,14 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { linksData } from "../data";
 import { Logo, Container, SidebarButton, Dropdown } from "./";
 import { useGlobal } from "../context";
+import clsx from "clsx";
 const Navbar = () => {
   const { switchSidebar } = useGlobal();
   return (
     <>
-      <div className='w-1 h-16'></div>
-      <nav className='border-y fixed w-screen bg-white top-0 z-10'>
+      <div className='w-1 h-[3.7rem]'></div>
+      <nav className='border-b fixed w-screen bg-white top-0 z-10'>
         {/*container*/}
         <Container>
           <div className='flex'>
@@ -20,13 +21,21 @@ const Navbar = () => {
                     const { id, name, url, icon } = link;
                     return (
                       <li key={id}>
-                        <Link
+                        <NavLink
                           to={url}
-                          className='flex items-center text-xl h-14 my-1 px-2 hover:bg-slate-100 hover:rounded-md duration-300 text-blue-900'>
+                          className={({ isActive }) =>
+                        clsx(
+                          "flex items-center text-xl h-11 my-2 px-2 hover:bg-slate-50 hover:rounded-md duration-300 text-blue-900",
+                          {
+                            "bg-[#fbfbfb] rounded-md": isActive,
+                          }
+                        )
+                      }>
                           <div className='mr-1 '>{icon}</div>
                           <p className='font-Cairo'>{name}</p>
-                        </Link>
+                        </NavLink>
                       </li>
+                        
                     );
                   })}
                 </ul>
