@@ -43,9 +43,9 @@ const News = () => {
   if (isError)
     return (
       <Container>
-        <div className="flex flex-col justify-center items-center m-auto w-fit my-8 font-sans">
+        <div className="flex flex-col justify-center items-center m-auto w-fit my-8 font-sans px-5">
           <FaTimes className='h-16 w-16 text-red-600'/>
-          <p className="text-2xl font-semibold">Access forbidden due to the US restrictions on your country</p>
+          <p className="text-2xl smx:text-xl font-semibold">Access forbidden due to the US restrictions on your country</p>
           <p className="self-end font-semibold text-sm text-gray-500 pt-3">Use a VPN service to access this section</p>
         </div>
       </Container>
